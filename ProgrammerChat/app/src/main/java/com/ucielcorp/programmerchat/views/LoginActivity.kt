@@ -15,8 +15,10 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.ucielcorp.programmerchat.R
+import com.ucielcorp.programmerchat.modals.User
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
     // Varibles para la autenticación
     private lateinit var auth : FirebaseAuth
     private lateinit var googleSingInClient : GoogleSignInClient
+    private lateinit var db : FirebaseFirestore
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +39,9 @@ class LoginActivity : AppCompatActivity() {
 
         // Firebase Auth Instance
         auth = FirebaseAuth.getInstance()
+
+        // Firebase Firestore Instance
+        db = FirebaseFirestore.getInstance()
 
         checkUser()
         loginUser()
@@ -113,11 +119,19 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("SignInActivity", "signInWithCredential:success")
-                    // val user = auth.currentUser
+
+                    // Datos del usuario
+                    val currentUser = auth.currentUser
+                    val user = User(
+                        name = currentUser!!.displayName.toString(),
+                        image = currentUser.photoUrl.toString(),
+                        email = currentUser.email.toString(),
+                        token = currentUser.uid)
+
                     val intent = Intent(this, ListOfChatsActivity::class.java)
 
-                    // Enviamos datos del usuario a la actividad
-
+                    // Almacenamos los datos dentro de la base de datos
+                    db.collection("user").document(currentUser.email.toString()).set(user)
 
                     startActivity(intent)
                     finish()

@@ -1,40 +1,48 @@
 package com.ucielcorp.programmerchat.presenters
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ucielcorp.programmerchat.R
 import com.ucielcorp.programmerchat.modals.User
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.item_chat.view.*
 import kotlinx.android.synthetic.main.item_user.view.*
 
-class UsersAdapter(val userClick: (User) -> Unit): RecyclerView.Adapter<UsersAdapter.UserViewHolder>()  {
-    var users: List<User> = emptyList()
+class UsersAdapter(private val context: Context,private val userList : ArrayList<User>): RecyclerView.Adapter<UsersAdapter.UserViewModel>() {
 
-    fun setData(list: List<User>){
-        users = list
-        notifyDataSetChanged()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewModel {
+        val itemView = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.item_user, parent, false)
+
+        return UserViewModel(itemView)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        return UserViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.item_user,
-                parent,
-                false
-            )
-        )
-    }
+    override fun onBindViewHolder(holder: UserViewModel, position: Int) {
+        val user : User = userList[position]
+        holder.nameUser.text = user.name
+        holder.emailUser.text = user.email
 
-    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.itemView.nameUserText.text = users[position].name
-        holder.itemView.emailUserText.text = users[position].email
+        // Glide para el Logo
+        Glide.with(context)
+            .load(user.image)
+            .into(holder.imageProfUser)
     }
 
     override fun getItemCount(): Int {
-        return users.size
+       return userList.size
     }
 
-    class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    class UserViewModel(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+        val nameUser : TextView = itemView.findViewById(R.id.nameUserText)
+        val emailUser : TextView = itemView.findViewById(R.id.emailUserText)
+        val imageProfUser : CircleImageView = itemView.findViewById(R.id.imageProfile)
+    }
 }
