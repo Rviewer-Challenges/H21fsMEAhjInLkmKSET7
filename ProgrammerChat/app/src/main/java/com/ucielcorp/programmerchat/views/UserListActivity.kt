@@ -5,7 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
@@ -18,11 +20,15 @@ import kotlinx.android.synthetic.main.activity_user_list.*
 
 class UserListActivity : AppCompatActivity() {
 
-    // Definición de variable principales
+    // Declaraciones de variables para el RecyclerView
     private lateinit var recyclerView: RecyclerView
     private lateinit var userArrayList : ArrayList<User>
     private lateinit var userAdapter : UsersAdapter
+
+    // Declaración de variables de Firebase
     private lateinit var db : FirebaseFirestore
+    private lateinit var auth : FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,14 +47,22 @@ class UserListActivity : AppCompatActivity() {
         userAdapter = UsersAdapter(this, userArrayList)
         recyclerView.setAdapter(userAdapter)
 
+        userAdapter.setOnClickListener(object : UsersAdapter.onItemClickListner{
+            override fun onItemClick(position: Int) {
+                startActivity(Intent(this@UserListActivity, ChatActivity::class.java,))
+            }
+        })
+
         initView()
     }
 
     @SuppressLint("NotifyDataSetChanged")
     private fun initView() {
 
+        auth = FirebaseAuth.getInstance()
+
         db = FirebaseFirestore.getInstance()
-        db.collection("user").addSnapshotListener(object : EventListener<QuerySnapshot> {
+        db.collection("user").whereNotEqualTo("email",auth.currentUser?.email).addSnapshotListener(object : EventListener<QuerySnapshot> {
             override fun onEvent(
                 value: QuerySnapshot?,
                 error: FirebaseFirestoreException?

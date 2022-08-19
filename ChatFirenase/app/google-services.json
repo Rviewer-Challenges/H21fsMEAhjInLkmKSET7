@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "680048604011",
+    "project_id": "chatfirebase-f1a55",
+    "storage_bucket": "chatfirebase-f1a55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680048604011:android:ab596379c27117b721922e",
+        "android_client_info": {
+          "package_name": "com.ucielcorp.chatfirenase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680048604011-hikad3bv5d19tptg0d3fcso09pujf653.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAC4-VGfqdY2cp0UNTDnVZJU4KgWKYMyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680048604011-hikad3bv5d19tptg0d3fcso09pujf653.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
