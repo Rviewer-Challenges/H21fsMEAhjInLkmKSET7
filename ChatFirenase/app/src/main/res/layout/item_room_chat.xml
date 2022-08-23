@@ -13,54 +13,76 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/nameUserText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="User"
-            android:textSize="11sp"
-            android:textColor="#00A6FF"
-            android:fontFamily="@font/inter_bold"
-            app:layout_constraintBottom_toTopOf="@+id/contentMyMessage"
-            app:layout_constraintEnd_toStartOf="@+id/myImageProf"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contentMyMessage"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/rectangle_6"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/myImageProf"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameUserText">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/myMessageText"
-                android:layout_width="match_parent"
+                android:id="@+id/nameUserText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/inter_extra_bold"
+                android:gravity="end"
+                android:text="User"
+                android:textColor="#014B6C"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/myMessageText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@+id/nameUserText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/myMessageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="2dp"
                 android:fontFamily="@font/inter_semi_bold"
+                android:gravity="start"
+                android:maxWidth="270dp"
                 android:text="Hola"
-                android:textColor="@color/white"
+                android:textColor="#FFFFFF"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/timeMyMessage"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameUserText" />
+
+            <Space
+                android:id="@+id/space2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/myMessageText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/timeMyMessage"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginEnd="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="2dp"
                 android:fontFamily="@font/inter_medium"
                 android:gravity="bottom"
                 android:maxLength="2000"
@@ -77,7 +99,7 @@
             android:id="@+id/myImageProf"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintEnd_toEndOf="parent"
@@ -92,53 +114,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myMessageLayout">
 
-        <TextView
-            android:id="@+id/otherUserText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/inter_bold"
-            android:text="User"
-            android:textColor="#AFAFAF"
-            android:textSize="11sp"
-            app:layout_constraintStart_toEndOf="@+id/otherImageProf"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contentOtherMessage"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="64dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/background_other_message"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/otherImageProf"
-            app:layout_constraintTop_toBottomOf="@+id/otherUserText">
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/otherUserText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="User"
+                android:textColor="#CFCFCF"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Space
+                android:id="@+id/space3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/otherUserText"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/otherMessageText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/inter_semi_bold"
+                android:maxWidth="270dp"
                 android:text="Hola"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/otherUserText" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/otherMessageText"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/timeOtherMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
                 android:fontFamily="@font/inter_medium"
                 android:gravity="bottom"
                 android:text="12:00"

@@ -1,13 +1,18 @@
 package com.ucielcorp.chatfirenase.Views
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +25,17 @@ import com.vanniktech.emoji.EmojiPopup
 import com.vanniktech.emoji.EmojiTextView
 import kotlinx.android.synthetic.main.activity_room_chat_acticity.*
 import java.util.*
+import android.Manifest
+import android.app.Activity
+import android.net.Uri
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.item_room_chat.*
+import java.io.File
+import java.net.URI
+import java.text.SimpleDateFormat
+import java.util.logging.SimpleFormatter
 import kotlin.collections.ArrayList
 
 class RoomChatActicity : AppCompatActivity() {
@@ -31,6 +47,9 @@ class RoomChatActicity : AppCompatActivity() {
     // Declaración de variables de Firebase
     private lateinit var db : FirebaseFirestore
     private lateinit var auth : FirebaseAuth
+
+    // Image
+    private lateinit var imageUri : Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +74,7 @@ class RoomChatActicity : AppCompatActivity() {
 
         emojiConfig()
         initViews()
+
     }
 
     private fun emojiConfig(){
@@ -73,8 +93,6 @@ class RoomChatActicity : AppCompatActivity() {
                 .inflate(R.layout.emoji_text_view, linearLayout2, false) as EmojiTextView
 
             emojiTextView.setText(messageText.text.toString())
-            //linearLayout2.addView(emojiTextView)
-
             sendMessage()
         }
 
@@ -99,6 +117,7 @@ class RoomChatActicity : AppCompatActivity() {
                 chatAdapter.notifyDataSetChanged()
             }
         })
+
     }
 
     private fun sendMessage() {
@@ -140,4 +159,5 @@ class RoomChatActicity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
 
     }
+
 }

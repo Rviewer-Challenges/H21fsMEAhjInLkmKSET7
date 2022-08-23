@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ucielcorp.chatfirenase">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".Views.EmojiApplication"
         android:allowBackup="true"
@@ -15,11 +18,17 @@
         android:theme="@style/Theme.ChatFirenase"
         tools:targetApi="31">
         <activity
-            android:name=".Views.RoomChatActicity"
-            android:exported="false" />
-        <activity
             android:name=".Views.LoginActivity"
-            android:exported="true">
+            android:exported="false"
+            android:theme="@style/Theme.ChatFirenase"/>
+        <activity
+            android:name=".Views.RoomChatActicity"
+            android:exported="false"
+            android:theme="@style/Theme.RoomChat"/>
+        <activity
+            android:name=".Views.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

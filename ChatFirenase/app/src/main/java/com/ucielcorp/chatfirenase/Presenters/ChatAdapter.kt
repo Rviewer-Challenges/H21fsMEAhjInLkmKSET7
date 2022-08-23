@@ -82,6 +82,6 @@ class ChatAdapter(private val context: Context, private val chatList : ArrayList
         val nameOtherUser : TextView = itemView.findViewById(R.id.otherUserText)
         val otherMessageText : TextView = itemView.findViewById(R.id.otherMessageText)
         val imageOtherProfile : ImageView = itemView.findViewById(R.id.otherImageProf)
-        val timeOtherMessage : TextView = itemView.findViewById(R.id.timeMyMessage)
+        val timeOtherMessage : TextView = itemView.findViewById(R.id.timeOtherMessage)
     }
 }
