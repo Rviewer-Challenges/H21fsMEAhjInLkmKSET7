@@ -125,14 +125,16 @@ class RoomChatActicity : AppCompatActivity() {
 
         val message = Message(
             id = messageId,
-            message = messageText.text.toString(),
+            message = messageText?.text.toString(),
             email = auth.currentUser?.email.toString(),
             nameUser = auth.currentUser?.displayName.toString(),
             imageProfile = auth.currentUser?.photoUrl.toString()
         )
 
         // DB
-        db.collection("chats").document(messageId).set(message)
+        if(message.message.isNotEmpty()){
+            db.collection("chats").document(messageId).set(message)
+        }
 
         messageText.setText("")
     }
