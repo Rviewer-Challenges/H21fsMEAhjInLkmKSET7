@@ -5,7 +5,7 @@
 
 Esta es una pequeña aplicación mobile para el sistema Android, en la cual podemos enviar mensajes e interactuar con otros usuario en un espacio en comun, en esta primera versión solo se puede enviar mensajes de texto.  
 
-> Descargar la apk para probar la app: <a download="room_chat" href="https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/tree/main/ChatFirenase/app/release/app-release.apk">APK</a>
+> Descargar la apk para probar la app: Desacarga la aplicación .apk [aquí](https://github.com/Rviewer-Challenges/wYOBWdZelywKFXZWiupw/raw/devel/app/debug/app-debug.apk)
 
 ## ¿ Como nacio la idea de está app ? 👨‍💻
 Surguio atraves de lo retos proporcionado por [MoureDev](https://github.com/mouredev), en conjunto con [Rviewer](https://github.com/Rviewer-Challenges). Por lo tanto, desde ese punto empece a imaginarme como seria mi propio chat, entonces de ahí surguio Room Chat, que en si misma es una reducción de un proyecto mucho mas grande, pero en si es una pequeña prueba de una de las caracteristica que tendra el otro proyecto. Mas adelante tendran avances 😉
