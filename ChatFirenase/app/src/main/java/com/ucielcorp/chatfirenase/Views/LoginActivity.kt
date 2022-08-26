@@ -1,6 +1,7 @@
 package com.ucielcorp.chatfirenase.Views
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
