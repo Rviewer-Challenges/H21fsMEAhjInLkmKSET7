@@ -26,3 +26,9 @@ En lo absoluto, es mucho mas facil de lo que parece:
 ## Desmostración de la app 🎞
 ![User_1](https://user-images.githubusercontent.com/73118144/187001102-eab53b45-4283-4e86-90fa-520fd4cf0fb7.gif)
 ![User_2](https://user-images.githubusercontent.com/73118144/187001118-70894b65-31ea-4b41-9602-91a78565f0f5.gif)
+
+##
+<p align="center">
+  <img style="width : 100px" src="https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/blob/main/Imagenes/logo.png"/>
+  <h4 align="center">Creado por Uciel Daró</h4>
+</p>
