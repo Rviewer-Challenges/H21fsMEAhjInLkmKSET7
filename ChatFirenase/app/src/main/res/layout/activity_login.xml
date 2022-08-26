@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
     android:theme="@style/Theme.ChatFirenase"
+    android:screenOrientation="portrait"
     tools:context=".Views.LoginActivity">
 
     <androidx.cardview.widget.CardView

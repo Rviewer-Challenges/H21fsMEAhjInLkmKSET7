@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChatFirenase</string>
+    <string name="app_name">Room Chat</string>
     <string name="buscar">Buscar...</string>
     <string name="send">send</string>
     <string name="mensaje">Mensaje</string>

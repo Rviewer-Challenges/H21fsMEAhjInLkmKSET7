@@ -28,6 +28,7 @@ import java.util.*
 import android.Manifest
 import android.app.Activity
 import android.net.Uri
+import android.os.PersistableBundle
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -48,11 +49,9 @@ class RoomChatActicity : AppCompatActivity() {
     private lateinit var db : FirebaseFirestore
     private lateinit var auth : FirebaseAuth
 
-    // Image
-    private lateinit var imageUri : Uri
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        savedInstanceState?.clear()
         setContentView(R.layout.activity_room_chat_acticity)
 
         //Inicializamos la variable firebaseAuth
@@ -64,13 +63,13 @@ class RoomChatActicity : AppCompatActivity() {
 
         // RecyclerView Conf
         recyclerView = findViewById(R.id.usersChatRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this,RecyclerView.VERTICAL, true)
         recyclerView.setHasFixedSize(true)
 
         chatArrayList = arrayListOf()
 
-        chatAdapter = ChatAdapter(this, chatArrayList)
-        recyclerView.setAdapter(chatAdapter)
+        chatAdapter = ChatAdapter(chatArrayList)
+        recyclerView.adapter = chatAdapter
 
         emojiConfig()
         initViews()
@@ -110,10 +109,9 @@ class RoomChatActicity : AppCompatActivity() {
 
                 for(dc : DocumentChange in value?.documentChanges!!){
                     if(dc.type == DocumentChange.Type.ADDED){
-                        chatArrayList.add(dc.document.toObject(Message::class.java))
+                        chatArrayList.add(0,dc.document.toObject(Message::class.java))
                     }
                 }
-
                 chatAdapter.notifyDataSetChanged()
             }
         })
@@ -159,7 +157,5 @@ class RoomChatActicity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-
     }
-
 }
