@@ -10,5 +10,7 @@ Surguio atraves de lo retos proporcionado por [MoureDev](https://github.com/mour
 
 ## ¿ Es muy complicada usarla ? 🙆‍♂️
 En lo absoluto, es mucho mas facil de lo que parece:
-- Primero, tiene que iniciar sesión con su cuenta de google
-![Images](https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/blob/main/Imagenes/login.jpg)
+- Primero, tiene que iniciar sesión con su cuenta de google:
+<img style="width : 400px" src="https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/blob/main/Imagenes/login.png">
+
+- Y en segundo lugar, luego de iniciar sesión acceden a la sala de chat, donde ya va a poder empezar a enviar mensajes:
