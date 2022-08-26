@@ -14,7 +14,7 @@ En lo absoluto, es mucho mas facil de lo que parece:
 <img style="width : 400px" src="https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/blob/main/Imagenes/login.png">
 
 - Y en segundo lugar, luego de iniciar sesión acceden a la sala de chat, donde ya va a poder empezar a enviar mensajes:
-<img style="width : 400px" src="https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/blob/main/Imagenes/chat.jpeg">
+<img style="width : 350px" src="https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/blob/main/Imagenes/chat.jpeg">
 
 ## Tecnologias utilizadas 🛠
 ![kotlin](https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo.png)  
