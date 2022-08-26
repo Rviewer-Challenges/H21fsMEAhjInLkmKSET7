@@ -17,8 +17,10 @@ En lo absoluto, es mucho mas facil de lo que parece:
 <img style="width : 350px" src="https://github.com/Rviewer-Challenges/H21fsMEAhjInLkmKSET7/blob/main/Imagenes/chat.jpeg">
 
 ## Tecnologias utilizadas 🛠
-![kotlin](https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo.png)  
-[Kotlin](https://kotlinlang.org/)
+![kotlin](https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo.png)  [Kotlin](https://kotlinlang.org/) `Lenguaje de programación. Es parte del frontend de la app`
 
-![firebase](https://img.icons8.com/color/34/000000/firebase.png)  
-[Firebase](https://firebase.google.com/?hl=es-419)
+![firebase](https://img.icons8.com/color/34/000000/firebase.png)  [Firebase](https://firebase.google.com/?hl=es-419) `Conjunto de herrameintas de google. Backend de la app`
+
+## Desmostración de la app 🎞
+![User_1](https://user-images.githubusercontent.com/73118144/187001102-eab53b45-4283-4e86-90fa-520fd4cf0fb7.gif)
+![User_2](https://user-images.githubusercontent.com/73118144/187001118-70894b65-31ea-4b41-9602-91a78565f0f5.gif)
